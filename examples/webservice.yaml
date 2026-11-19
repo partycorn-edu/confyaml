@@ -1,0 +1,14 @@
+service: shop-api
+listen:
+  host: 0.0.0.0
+  port: 1000
+pool:
+  workers: 4
+  queue: 32
+  limits:
+  - 5
+  - 10
+  - 3000
+hosts:
+- a.example.com
+- b.example.com
