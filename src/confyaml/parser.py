@@ -6,7 +6,9 @@ from lark.exceptions import UnexpectedCharacters, UnexpectedToken
 from .errors import ConfigError
 from .grammar import GRAMMAR
 
-_PARSER = Lark(GRAMMAR, parser="lalr", propagate_positions=True)
+_PARSER = Lark(
+    GRAMMAR, parser="lalr", lexer="basic", propagate_positions=True
+)
 
 
 def _token_message(err):
